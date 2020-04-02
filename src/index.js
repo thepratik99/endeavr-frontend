@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import mapboxgl from 'mapbox-gl';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidG9tYXNnaWEiLCJhIjoiY2s4ajIzOTl6MDUybDNmcDhzd2JwbzJmdiJ9.EZxoNTzC5kqOfx3HUT-4JQ';
 
@@ -23,6 +25,13 @@ class Application extends React.Component {
 			center: [this.state.lng, this.state.lat],
 			zoom: this.state.zoom
 		});
+
+		map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }),
+        'top-left'
+    	);
 	}
 	 
 	render() {
