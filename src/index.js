@@ -32,6 +32,27 @@ class Application extends React.Component {
         }),
         'top-left'
     	);
+
+    	const marker = new mapboxgl.Marker() //marker for where the smart park is located
+    		.setLngLat([-97.6056, 31.0788])
+    		.addTo(map);
+/*
+		MUST USE GEOCODER API TO ADD LOCATIONS TO MAP
+
+    	const geocoder = new MapboxGeocoder({
+		    accessToken: mapboxgl.accessToken,
+		    mapboxgl: mapboxgl,
+		    marker: false, // Do not use the default marker style
+		    placeholder: 'Search for places in/near Nolanville',
+		    bbox: [-97.9000, 30.7500, -97.3000, 31.4000],
+		    proximity: {
+	     		longitude: -97.6056,
+	    		latitude: 31.0788
+	    	}
+  		});
+
+  		map.addControl(geocoder);
+*/
 	}
 	 
 	render() {
