@@ -64,7 +64,7 @@ class Application extends React.Component {
 	}
 }
  
-ReactDOM.render(<Application />, document.getElementById('app'));
+//ReactDOM.render(<Application />, document.getElementById('app'));
 
 
 // If you want your app to work offline and load faster, you can change
